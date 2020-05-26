@@ -1,0 +1,54 @@
+/* CSS Rules:
+** The parent overrides the child
+*/
+
+#studentTableContainer{
+  text-align: left;
+  margin: 0%; /* Moves the table */
+  margin-right: 4%; /* Moves the table */
+  margin-left: 10%; /* Moves the table */
+}
+
+/* The title of the table */
+#studentTableTitle{
+  font-size: x-large;
+  text-align: right;
+  align-content: right;
+}
+
+#studentTable{
+  text-align: left; /* Aligns all of the text inside of all cells */
+  padding: 1px; /* Stretches the space around the cells, not in between the cells*/
+  border: 5px solid rgb(0, 0, 0); /* The color of the frame around the table */
+  border-width: 2px; /* The frame around the table */
+  background-color: #755c09e5;
+  width: 80%; /* Stretches the whole table from left to right
+}
+
+#studentTableBody{
+  padding: 10px; /* Stretches the table */
+  border: 5px solid rgb(0, 0, 0); /* The color of the frame around the table */
+  border-width: 5px; /* The frame around the table */
+  background-color: #755c09e5;
+}
+
+/* This only effects the header cells */
+.studentTableRow{
+  border: 10px solid rgb(0, 0, 0); /* The color of the frame around the table */
+  border-top: thin solid;
+  border-bottom: thin solid;
+  text-align: center;
+  border-width: 2px;
+  background-color: #ac860ae5;
+}
+
+/* Adds borders to everything in the table */
+table, td{
+  border: 2px solid black;
+}
+
+/* All of the table data tags */
+td{
+  background-color: #ac860ae5;
+  font-style: oblique;
+}

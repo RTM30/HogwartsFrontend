@@ -5,21 +5,36 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentsTableComponent } from './components/students-table/students-table.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { RouterModule } from '@angular/router';
+import { IndexComponent } from './components/index/index.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentsTableComponent
+    StudentsTableComponent,
+    NavBarComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {
+        path: 'studentTable',
+        component: StudentsTableComponent,
+      },
+      {
+        path: 'home',
+        component: IndexComponent
+      }
+    ])
   ],
   providers: [],
   bootstrap: [
     AppComponent,
-    StudentsTableComponent
+    NavBarComponent
   ]
 })
 export class AppModule { }

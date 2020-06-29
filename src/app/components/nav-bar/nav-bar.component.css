@@ -1,0 +1,21 @@
+#navBar{
+  list-style: none; /* Removes the bullet points */
+  background-color: #755c09e5;
+  min-width: 696px;
+  padding-top: 5px; /* This puts space above the text */
+  padding-bottom: 5px; /* This puts space below the text */
+}
+
+#navBarContainer{
+  display: table;
+  margin: 0 auto;
+  background-color: black;
+  display: inline; /* This makes the navbar stretch out */
+	margin: 0 auto;
+}
+
+li {
+  display: inline; /* This makes the list display horizontally */
+  padding-left: 1%; /* This spaces out the listed items */
+  font-size: larger;
+}

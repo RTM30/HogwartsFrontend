@@ -24,8 +24,10 @@ export class StudentService {
   private httpClient: HttpClient
   ) { }
 
+  // Get all students
   getStudents() {
-    console.log('getStudents function is working');
     return this.httpClient.get<Student[]>('http://localhost:8080/student/findall');
   }
+
+
 }

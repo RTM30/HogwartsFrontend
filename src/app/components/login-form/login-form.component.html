@@ -1,0 +1,9 @@
+<p>Please login</p>
+
+<form [formGroup] = "reactiveForm">
+    <label for = "studentId">Student ID: </label><br>
+    <input type = "text" placeholder = "student ID" formControlName = "studentid"><br>
+    <label for = "password">Password: </label><br>
+    <input type = "text" placeholder = "password" formControlName = "password"><br><br>
+    <input type = "submit" (click) = "login()" name = "submit" ngModel><br> 
+</form>

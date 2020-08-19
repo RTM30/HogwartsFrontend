@@ -23,9 +23,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // formsExper
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,  //formsExperiment
-    ReactiveFormsModule,  //formsExperiment
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
+      {
+        path: '',
+        component: LoginFormComponent,
+      },
       {
         path: 'studentTable',
         component: StudentsTableComponent,

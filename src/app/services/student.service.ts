@@ -29,5 +29,11 @@ export class StudentService {
     return this.httpClient.get<Student[]>('http://localhost:8080/student/findall');
   }
 
+  // Login
+  login(studentId: any){
+    console.log('logging in' + studentId);
+    return this.httpClient.post<Student[]>('http://localhost:8080/student/login', studentId);
+  }
+
 
 }

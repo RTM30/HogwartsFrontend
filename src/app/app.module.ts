@@ -46,8 +46,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // formsExper
   ],
   providers: [],
   bootstrap: [
-    AppComponent,
-    NavBarComponent
+    AppComponent
   ]
 })
 export class AppModule { }

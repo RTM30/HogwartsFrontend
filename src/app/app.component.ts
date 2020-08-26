@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { Router, NavigationStart } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog';
-import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +11,7 @@ export class AppComponent {
   showHead: boolean = false;
   title = 'Hogwarts';
 
-  constructor(private router: Router, public dialog: MatDialog) {
+  constructor(private router: Router) {
     // on route change to '/login', set the variable showHead to false
       router.events.forEach((event) => {
         if (event instanceof NavigationStart) {
@@ -25,10 +23,6 @@ export class AppComponent {
           }
         }
       });
-    }
-
-    loginModal(){
-      this.dialog.open(LoginFormComponent);
     }
   }
 

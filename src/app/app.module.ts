@@ -31,7 +31,7 @@ import { MaterialModule } from './material/material.module';
     RouterModule.forRoot([
       {
         path: '',
-        component: LoginFormComponent,
+        component: IndexComponent,
       },
       {
         path: 'studentTable',

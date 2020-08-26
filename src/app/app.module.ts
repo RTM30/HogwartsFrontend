@@ -12,6 +12,7 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // formsExperiment
 import { MaterialModule } from './material/material.module';
+import { CreateAccountComponent } from './components/create-account/create-account.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { MaterialModule } from './material/material.module';
     NavBarComponent,
     IndexComponent,
     LoginFormComponent,
+    CreateAccountComponent,
   ],
   imports: [
     BrowserModule,

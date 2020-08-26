@@ -3,6 +3,8 @@ import { FormsModule, FormGroup, FormControl, Validators } from '@angular/forms'
 import { StudentService } from 'src/app/services/student.service';
 import { student } from 'src/app/models/student';
 import { Router } from '@angular/router';
+import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login-form',
@@ -22,7 +24,11 @@ export class LoginFormComponent implements OnInit {
 
 
 
-  constructor(public studentService: StudentService, private router: Router) { }
+  constructor(
+    public studentService: StudentService,
+    private router: Router,
+    public snackbar: MatSnackBar,
+    public dialog: MatDialog) { }
 
 
   ngOnInit(): void {
@@ -39,10 +45,23 @@ login(){
   // Load new page after login
     if (this.loginResults != null) {
     this.router.navigate(['./home']);
+    const config = new MatSnackBarConfig();
+    config.duration = 3000;
+    this.snackbar.open('Login successful', '', config);
+
+    this.dialog.closeAll();
    }
    else {
      console.log('login failed');
+     const config = new MatSnackBarConfig();
+     config.duration = 3000;
+     this.snackbar.open('Login failed', '', config);
    }
   }); // End of subscribe
   }
+
+   // Close modal
+   close(){
+     this.dialog.closeAll();
+   }
 }

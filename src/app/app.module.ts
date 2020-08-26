@@ -9,7 +9,9 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { RouterModule } from '@angular/router';
 import { IndexComponent } from './components/index/index.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // formsExperiment
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // formsExperiment
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // formsExper
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MaterialModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -42,8 +45,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // formsExper
         path: 'login',
         component: LoginFormComponent,
       }
-    ])
+    ]),
+    BrowserAnimationsModule
   ],
+  entryComponents: [LoginFormComponent],
   providers: [],
   bootstrap: [
     AppComponent

@@ -1,4 +1,4 @@
-<p>Please login</p>
+<h3>Please login</h3>
 
 <form [formGroup] = "reactiveForm">
     <label for = "studentId">Student ID: </label><br>
@@ -6,7 +6,9 @@
     <label for = "password">Password: </label><br>
     <input type = "password" placeholder = "password" minlength = "4" formControlName = "password"><br><br>
     <div class="row">
+    <a routerLink = "createAccount" (click) = "close()">New user? Create an account.</a><br><br>
     <input type = "submit" (click) = "login()" name = "submit">
-    <button (click) = "close()">Cancel</button>
+    <!-- <div class = "divider"></div> -->
+    <button class="btnCancel" (click) = "close()">Cancel</button><br><br>
   </div>
 </form>

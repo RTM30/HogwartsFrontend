@@ -5,3 +5,13 @@
 #row{
 
 }
+
+/* #divider{
+  width:1px;
+    height:auto;
+    display:inline-flex;
+} */
+
+.btnCancel{
+  float: right;
+}

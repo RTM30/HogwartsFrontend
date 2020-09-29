@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudentService, Student } from 'src/app/services/student.service';
 import { stringify } from 'querystring';
+import { LoginStateService } from 'src/app/services/login-state.service';
 
 @Component({
   selector: 'app-students-table',
@@ -19,18 +20,24 @@ export class StudentsTableComponent implements OnInit {
   studentRegDate1: string;
   studentRegTime1: string;
 
-  constructor(private studentService: StudentService) {
+  loginState: boolean;
 
-     studentService.getStudents()
-     .subscribe(data => {
-       console.log(data);
-       this.allStudents = data;
-     });
+  constructor(
+    public loginStateService: LoginStateService,
+    private studentService: StudentService) {
+
+       this.loginState = this.loginStateService.loggedIn;
+
+
   }
 
   ngOnInit(): void {
 
-   }
-
-
+    this.studentService.getStudents()
+    .subscribe(data => {
+      console.log(data);
+      this.allStudents = data;
+      console.log(this.loginStateService.loggedIn);
+    });
+  }
 }

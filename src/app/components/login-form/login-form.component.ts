@@ -5,6 +5,7 @@ import { student } from 'src/app/models/student';
 import { Router } from '@angular/router';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { MatDialog } from '@angular/material/dialog';
+import { LoginStateService } from 'src/app/services/login-state.service';
 
 @Component({
   selector: 'app-login-form',
@@ -22,14 +23,12 @@ export class LoginFormComponent implements OnInit {
   // Gets student info at login
   loginResults: student[];
 
-
-
   constructor(
     public studentService: StudentService,
     private router: Router,
     public snackbar: MatSnackBar,
-    public dialog: MatDialog) { }
-
+    public dialog: MatDialog,
+    public loginState: LoginStateService) { }
 
   ngOnInit(): void {
 
@@ -42,9 +41,16 @@ login(){
     this.loginResults = results;
     console.log('The user logged in is ', this.loginResults);
 
-  // Load new page after login
+
     if (this.loginResults != null) {
+
+    // Set login state to true
+    this.loginState.setLoginState();
+
+    // Load new page after login
     this.router.navigate(['./home']);
+
+    // snackbar notification
     const config = new MatSnackBarConfig();
     config.duration = 3000;
     this.snackbar.open('Login successful', '', config);

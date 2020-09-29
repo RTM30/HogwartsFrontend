@@ -18,7 +18,7 @@ export class Student {
 })
 export class StudentService {
 
-
+  studentCreated: boolean;
 
   constructor(
   private httpClient: HttpClient
@@ -30,9 +30,15 @@ export class StudentService {
   }
 
   // Login
-  login(studentId: any){
+  login(studentId: any) {
     console.log('logging in' + studentId);
     return this.httpClient.post<Student[]>('http://localhost:8080/student/login', studentId);
+  }
+
+  // Create an account
+  createStudent(student: any) {
+    console.log('createStudent method is running' + student);
+    return this.httpClient.post<Student[]>('http://localhost:8080/student/insert', student);
   }
 
 

@@ -13,6 +13,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // formsExperiment
 import { MaterialModule } from './material/material.module';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
+import { LogginStateComponent } from './components/loggin-state/loggin-state.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CreateAccountComponent } from './components/create-account/create-accou
     IndexComponent,
     LoginFormComponent,
     CreateAccountComponent,
+    LogginStateComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +48,10 @@ import { CreateAccountComponent } from './components/create-account/create-accou
       {
         path: 'login',
         component: LoginFormComponent,
+      },
+      {
+        path: 'createAccount',
+        component: CreateAccountComponent,
       }
     ]),
     BrowserAnimationsModule

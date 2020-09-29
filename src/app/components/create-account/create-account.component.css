@@ -1,0 +1,16 @@
+h1{
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: xx-large;
+}
+
+.form{
+  text-align: center;
+  align:left;
+}
+
+label {
+  text-align: right;
+  width: 75px;
+  padding-right: 90px;
+ }

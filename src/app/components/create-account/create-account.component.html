@@ -1,19 +1,21 @@
-<p>Create an account</p>
+<h1>Create an account</h1>
 
-<form>
-  <label>First Name:</label>
-  <input type = "text">
-  <label>Last name:</label>
-  <input type = "text">
-  <label>Month born:</label>
-  <input type = "text">
-  <label>Day born:</label>
-  <input type = "text">
-  <label>Year born:</label>
-  <input type = "text">
-  <label>House:</label>
-  <input type = "text">
-  <label>New Password:</label>
-  <input type = "text">
+<form [formGroup] = "createAccountForm">
+  <div class = "form">
+  <label>First Name:</label><br>
+  <input type = "text" formControlName = "firstName"><br>
+  <label>Last Name:</label><br>
+  <input type = "text" formControlName = "lastName"><br>
+  <label>Month Born:</label><br>
+  <input type = "text" formControlName = "dobMonth"><br>
+  <label>Day Born:</label><br>
+  <input type = "text" formControlName = "dobDay"><br>
+  <label>Year Born:</label><br>
+  <input type = "text" formControlName = "dobYear"><br>
+  <label>House:</label><br>
+  <input type = "text" formControlName = "house"><br>
+  <label>New Password:</label><br>
+  <input type = "text" formControlName = "password"><br><br>
   <input type = "submit" (click) = "submit()">
+  </div>
 </form>

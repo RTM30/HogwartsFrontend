@@ -1,3 +1,4 @@
+<body>
 <p>{{studentId1}}</p>
 <p>{{studentFirstName1}}</p>
 <p>{{studentLastName1}}</p>
@@ -5,28 +6,35 @@
 <p>{{studentRegDate1}}</p>
 <p>{{studentRegTime1}}</p>
 
-<div id = "studentTableContainer">
-  <table id = "studentTable">
-    <tbody id = "studentTableBody">
-      <tr id = "studentTableTitle">
-        <p>Students</p>
-      </tr>
-      <tr class = "studentTableRow">
-      <th>Student ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>House</th>
-      <th>Registration Date</th>
-      <th>Registration Time</th>
-      </tr>
-      <tr *ngFor = "let student of allStudents">
-        <td>{{student.studentId}}</td>
-        <td>{{student.firstName}}</td>
-        <td>{{student.lastName}}</td>
-        <td>{{student.house}}</td>
-        <td>{{student.regDate}}</td>
-        <td>{{student.regTime}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div *ngIf = "loginState">
+  <div id = "studentTableContainer">
+    <table id = "studentTable">
+      <tbody id = "studentTableBody">
+        <tr id = "studentTableTitle">
+          <p>Students</p>
+        </tr>
+        <tr class = "studentTableRow">
+        <th>Student ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>House</th>
+        <th>Registration Date</th>
+        <th>Registration Time</th>
+        </tr>
+        <tr *ngFor = "let student of allStudents">
+          <td>{{student.studentId}}</td>
+          <td>{{student.firstName}}</td>
+          <td>{{student.lastName}}</td>
+          <td>{{student.house}}</td>
+          <td>{{student.regDate}}</td>
+          <td>{{student.regTime}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
+
+<div *ngIf = "loginState != true">
+  <h2>You must be logged in to view this table</h2>
+</div>
+</body>
